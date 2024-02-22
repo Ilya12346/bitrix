@@ -136,11 +136,33 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die;
             </div>
             <div class="header-col right">
                 <div class="header-col__subrow">
-                    <nav class="header-nav">
-                        <a class="header-nav__item" href="#">Партнерам</a>
-                        <a class="header-nav__item" href="#">Где купить</a>
-                        <a class="header-nav__item" href="#">Контакты</a>
-                    </nav>
+
+
+				
+				<?$APPLICATION->IncludeComponent(
+	"bitrix:menu", 
+	"main_up_menu", 
+	array(
+		"COMPONENT_TEMPLATE" => "main_up_menu",
+		"ROOT_MENU_TYPE" => "top",
+		"MENU_CACHE_TYPE" => "N",
+		"MENU_CACHE_TIME" => "3600",
+		"MENU_CACHE_USE_GROUPS" => "Y",
+		"MENU_CACHE_GET_VARS" => array(
+		),
+		"MAX_LEVEL" => "1",
+		"CHILD_MENU_TYPE" => "top",
+		"USE_EXT" => "N",
+		"DELAY" => "N",
+		"ALLOW_MULTI_SELECT" => "N"
+	),
+	false
+);?>
+
+
+
+
+
                     <div class="header-contacts">
                         <a class="header-contacts__item btn-hover_parent"
                             href="tel:+78614725800">
@@ -475,7 +497,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die;
 						</div>
 					</div>
 				</div>
-				<div class="popup popup-vacancies" data-popup-wrapper="mail-company" data-overlay-on>
+				<!-- <div class="popup popup-vacancies" data-popup-wrapper="mail-company" data-overlay-on>
 					<div class="about-production__popup-btn" data-popup-close="mail-company">
 						<div class="btn-hover_parent">
 							<div class="btn-hover_circle white"></div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none">
@@ -518,8 +540,8 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die;
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="header-search" data-overlay-on data-header-component="search">
+				</div> -->
+				<!-- <div class="header-search" data-overlay-on data-header-component="search">
 					<form class="header-search__inner">
 						<div class="header-search__input">
 							<div class="input-wrapper" data-input-parent=""><input class="input" data-input="" required data-input-search="header" placeholder="Что вы хотите найти?"><svg class="input-wrapper-svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none">
@@ -530,4 +552,5 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die;
 							<div class="btn-hover_circle"></div><span>Найти</span>
 						</button>
 					</form>
-				</div>
+				</div> -->
+				<div class="overlay"></div>
