@@ -72,7 +72,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die;
                 <div class="footer-content__col left">
                     <div class="footer-content__rect">
                         <div class="footer-content__rect-logo">
-                            <a class="footer-content__rect-link" <?if ($APPLICATION->GetCurDir() != '/') :?>href="/"<?endif;?>>
+                            <a class="footer-content__rect-link" <?if ($APPLICATION->GetCurDir() != '/') :?>href="/"<?endif;?>   >
                                 <svg width="143" height="138" viewbox="0 0 143 138" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M54.2471 18.2906C52.308 -3.91021 85.8654 -7.02123 87.9995 15.16C89.9347 37.3568 56.3774 40.4718 54.2471 18.2906Z" fill="#F64653"></path>
                                     <path d="M70.6727 69.5419C70.505 57.9923 73.8369 33.3906 104.523 28.7417C106.676 28.4161 108.089 30.9465 106.692 32.6256L74.863 71.0327C73.4545 72.7314 70.7039 71.7546 70.6727 69.5419Z" fill="white"></path>
@@ -137,8 +137,18 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die;
                                 ?>
                             </nav>
                         </div>
-                        <div class="footer-content__subcol-bot"><a class="footer-content__policy" href="#">Политика
-                                конфиденциальности</a></div>
+                        <div class="footer-content__subcol-bot">
+                            <?php
+                            $APPLICATION->IncludeComponent(
+                                "bitrix:main.include",
+                                "",
+                                array(
+                                    "AREA_FILE_SHOW" => "file",
+                                    "PATH" => SITE_TEMPLATE_PATH . "/include/templ/privatPolicaBottom.php",
+                                )
+                            );
+                            ?>
+                            </div>
                     </div>
                     <div class="footer-content__subcol">
                         <div class="footer-content__subcol-top">
@@ -392,7 +402,6 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die;
                     );
                     ?>
                 </div>
-                <a class="footer-content__policy" href="#">Политика конфиденциальности</a>
                 <p class="footer-content__cloud-copy">
                     <?php
                     $APPLICATION->IncludeComponent(
@@ -400,7 +409,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die;
                         "",
                         array(
                             "AREA_FILE_SHOW" => "file",
-                            "PATH" => SITE_TEMPLATE_PATH . "/include/templ/footer_componets/crateInClaudmil.php",
+                            "PATH" => SITE_TEMPLATE_PATH . "/include/templ/privatPolicaBottom.php",
                         )
                     );
                     ?>

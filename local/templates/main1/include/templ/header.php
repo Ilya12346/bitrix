@@ -287,7 +287,18 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die;
 										<div class="header-main__contacts-office">Центральный офис</div><a class="header-main__contacts-tel" href="tel:+78614725800">8 (86147) 2-58-00</a><a class="header-main__contacts-mail" href="mailto:zdor_prod@mail.ru">zdor_prod@mail.ru</a>
 									</div>
 									<div class="header-main__contacts-col right-col">
-										<div class="header-main__contacts-top"><a class="header-main__contacts-policy" href="#">Политика конфиденциальности</a></div>
+										<div class="header-main__contacts-top">
+											<?php
+											$APPLICATION->IncludeComponent(
+											"bitrix:main.include",
+											"",
+											array(
+											"AREA_FILE_SHOW" => "file",
+											"PATH" => SITE_TEMPLATE_PATH . "/include/templ/privatPolicaTop.php",
+											)
+											);
+											?>
+									</div>
 										<div class="header-main__contacts-bot">
 											<div class="header-main__contacts-copy">© 2008-2023 «Здоровые продукты»</div>
 											<div class="header-main__contacts-dev"><span>Сделано в</span><a href="#" target="blank"> Клаудмил</a></div>
@@ -336,7 +347,23 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die;
 								</div>
 							</div>
 							<div class="header-main__contacts-col">
-								<div class="header-main__contacts-top"><a class="header-main__contacts-policy" href="#">Политика конфиденциальности</a>
+								<div class="header-main__contacts-top">
+
+
+
+																				<?php
+											$APPLICATION->IncludeComponent(
+											"bitrix:main.include",
+											"",
+											array(
+											"AREA_FILE_SHOW" => "file",
+											"PATH" => SITE_TEMPLATE_PATH . "/include/templ/privatPolicaTop.php",
+											)
+											);
+											?>
+
+
+
 									<div class="header-main__contacts-copy">© 2008-2023 «Здоровые продукты»</div>
 									<div class="header-main__contacts-dev"><span>Сделано в</span><a href="#"> Клаудмил</a></div>
 								</div>
@@ -554,3 +581,6 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die;
 					</form>
 				</div> -->
 				<div class="overlay"></div>
+
+
+
